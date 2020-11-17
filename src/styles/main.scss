@@ -1,6 +1,10 @@
 @import "calendar.scss";
 
-body {
-  margin: 0;
+* {
   box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font: 30px Arial, sans-serif;
 }
