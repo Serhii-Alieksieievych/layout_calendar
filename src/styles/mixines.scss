@@ -1,0 +1,18 @@
+@import "variables.scss";
+
+@mixin size {
+  height: $day-size;
+  width: $day-size;
+}
+
+@mixin centred {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+@mixin transformation {
+  transform: translate(0, -20px);
+  background-color: pink;
+}

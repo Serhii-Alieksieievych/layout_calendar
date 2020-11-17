@@ -1,0 +1,30 @@
+@import "variables.scss";
+@import "mixines.scss";
+
+@import "first-day-spaces.scss";
+@import "month-lenth-hidening.scss";
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  width: $one-day-space * 7;
+  @include centred;
+  & > * {
+    @include size;
+    background-color: #eee;
+    border: 1px solid black;
+    text-align: center;
+    line-height: $day-size;
+    margin: $distance;
+    transition: transform 0.5s, background-color 0.5s;
+  }
+  & > :hover {
+    @include transformation;
+  }
+}
+
+@for $i from 1 through 31 {
+  .calendar :nth-child(#{$i})::before {
+    content: "#{$i}";
+  }
+}
