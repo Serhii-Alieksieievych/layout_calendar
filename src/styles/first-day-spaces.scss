@@ -1,38 +1,10 @@
 @import "variables.scss";
 @import "mixines.scss";
 
-.calendar-tue {
-  & :first-child {
-    margin-left: $one-day-space + 1px;
-  }
-}
-
-.calendar-wed {
-  & :first-child {
-    margin-left: $one-day-space * 2 + 1px;
-  }
-}
-
-.calendar-thu {
-  & :first-child {
-    margin-left: $one-day-space * 3 + 1px;
-  }
-}
-
-.calendar-fri {
-  & :first-child {
-    margin-left: $one-day-space * 4 + 1px;
-  }
-}
-
-.calendar-sat {
-  & :first-child {
-    margin-left: $one-day-space * 5 + 1px;
-  }
-}
-
-.calendar-sun {
-  & :first-child {
-    margin-left: $one-day-space * 6 + 1px;
+@each $day, $num in $days-in-week {
+  .calendar-#{$day} {
+    & :first-child {
+      margin-left: $one-day-space * ($num - 1) + 1px;
+    }
   }
 }

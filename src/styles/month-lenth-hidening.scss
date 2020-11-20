@@ -1,24 +1,12 @@
 @import "variables.scss";
 @import "mixines.scss";
 
-.calendar-30 {
-  & :last-child {
-    display: none;
-  }
-}
-
-@for $i from 30 through 31 {
-  .calendar-29 {
-    & :nth-child(#{$i}) {
-      display: none;
-    }
-  }
-}
-
-@for $i from 29 through 31 {
-  .calendar-28 {
-    & :nth-child(#{$i}) {
-      display: none;
+@for $i from 28 through 31 {
+  .calendar-#{$i} {
+    @for $j from $i+1 through 32 {
+      & :nth-child(#{$j}) {
+        display: none;
+      }
     }
   }
 }
